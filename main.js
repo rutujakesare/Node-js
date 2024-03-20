@@ -1,9 +1,10 @@
-const array = ['apple', 'oranges' , ' ', 'mango', ' ' , 'lemon'];
-const transformedArray = array.map(item => {
-    if (item === '') {
-        return 'empty string';
-    } else {
-        return item;
-    }
-});
-console.log(transformedArray);
+const http = require('http');
+
+http.createServer((req, res) => {
+    res.writeHead(200, {
+        'Content-Type' : 'text/plain'
+    });
+
+    res.write('Hello World');
+    res.end();
+}).listen(2000);
